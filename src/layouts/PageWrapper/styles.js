@@ -1,18 +1,22 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Wrapper = styled.div`
-    height: 100vh;
-    width: 100%;
-    background-color: ${({ theme }) => theme.colors.background}
+    ${({ theme }) => css`
+        height: calc(100vh - ${theme.navBarHeight});
+        width: 100%;
+        background-color: ${theme.colors.background};
+    `}
 `
 
 const ContentArea = styled.section`
-    margin: 0 auto;
-    background-color: ${({ theme }) => theme.colors.white};
-    height: 100vh;
-    width: 100%;
-    max-width: 800px;
-
+    ${({ theme }) => css` 
+        margin: 0 auto;
+        background-color: ${theme.colors.white};
+        width: 100%;
+        max-width: 800px;
+        height: calc(100vh - ${theme.navBarHeight});
+        padding: 16px;
+    `}
 `
 
 export {

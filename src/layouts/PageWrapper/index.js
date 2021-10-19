@@ -1,12 +1,16 @@
+import { NavBar } from '../../components'
 import { Wrapper, ContentArea } from './styles'
 
 const PageWrapper = ({ child }) => {
     return (
-        <Wrapper>
-            <ContentArea>
-                {child}
-            </ContentArea>
-        </Wrapper>
+        <>
+            <NavBar title='Food Calories' />
+            <Wrapper>
+                <ContentArea>
+                    {child}
+                </ContentArea>
+            </Wrapper>
+        </>
     )
 }
 
