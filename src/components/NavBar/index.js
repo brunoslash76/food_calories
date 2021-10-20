@@ -1,5 +1,6 @@
-import Avatar from '../Avatar'
-import { NavContainer, Title } from './styles'
+import Avatar from '@mui/material/Avatar'
+import Title from '../Title'
+import { NavContainer } from './styles'
 
 const NavBar = ({ title }) => {
     const user = {

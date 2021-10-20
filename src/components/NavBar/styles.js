@@ -12,15 +12,6 @@ const NavContainer = styled.nav`
     `}
 `
 
-const Title = styled.h1`
-    ${({ theme }) => css`
-        font-family: ${theme.fonts.family};
-        font-size: ${theme.fonts.sizes.xxlarge};
-        color: ${theme.colors.white}
-    `}
-`
-
 export {
-    NavContainer,
-    Title
+    NavContainer
 }
