@@ -7,9 +7,10 @@ const theme = {
         default: '#676767',
         warning: '#ECBD77',
         danger: '#B86D6D',
+        grey: '#C4C4C4'
     },
     fonts: {
-        family: 'Roboto sans-serif',
+        family: 'Roboto',
         sizes: {
             xxlarge: '2.8rem',
             xlarge: '2.0rem',
@@ -24,7 +25,8 @@ const theme = {
             regular: '400',
             bold: '700'
         }
-    }
+    },
+    navBarHeight: '80px'
 }
 
 export default theme
