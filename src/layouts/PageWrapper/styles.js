@@ -2,7 +2,8 @@ import styled, { css } from 'styled-components'
 
 const Wrapper = styled.div`
     ${({ theme }) => css`
-        height: calc(100vh - ${theme.navBarHeight});
+        min-height: calc(100vh - ${theme.navBarHeight});
+        height: fit-content;
         width: 100%;
         background-color: ${theme.colors.background};
     `}
@@ -14,8 +15,9 @@ const ContentArea = styled.section`
         background-color: ${theme.colors.white};
         width: 100%;
         max-width: 800px;
-        height: calc(100vh - ${theme.navBarHeight});
-        padding: 16px;
+        min-height: calc(100vh - 80px);
+        padding: 40px;
+        padding-bottom: 56px;
     `}
 `
 
