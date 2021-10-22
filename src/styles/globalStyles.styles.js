@@ -1,31 +1,37 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
-    * {
-        box-sizing: border-box;
-        font-size: 10px;
-        border: none;
-        margin: 0;
-        padding: 0;
-        
-    }
+    ${({ theme }) => css`
+        * {
+            box-sizing: border-box;
+            font-size: 10px;
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-family: ${theme.fonts.family};
+        }
 
-    h1, h2, h3, h4, h5, h6, p {
-        margin: 0;
-        font-family: ${({ theme }) => theme.fonts.family};
-    }
+        h1, h2, h3, h4, h5, h6, p {
+            margin: 0;
+        }
 
-    a, p {
-        font-size: 1.4rem;
-    }
+        strong {
+            font-size: ${theme.fonts.sizes.medium};
+            font-weight: ${theme.fonts.weight.bold};
+        }
 
-    ol, ul {
-        list-style: none;
-    }
+        a, p {
+            font-size: 1.4rem;
+        }
 
-    button {
-        border: none;
-    }
+        ol, ul {
+            list-style: none;
+        }
+
+        button {
+            border: none;
+        }
+    `}
 `
 
 export default GlobalStyles
