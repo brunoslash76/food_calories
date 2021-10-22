@@ -1,9 +1,10 @@
 import PageWrapper from '../../layouts/PageWrapper'
+import { FoodsWrapper } from '../../components'
 
 const HomePage = () => {
     return (
         <PageWrapper>
-            <h1>Home</h1>
+            <FoodsWrapper />
         </PageWrapper>
     )
 }
