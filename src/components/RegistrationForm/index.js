@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { Button, Checkbox, FormControlLabel, TextField } from '@mui/material';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Button, Checkbox, FormControlLabel, TextField } from '@mui/material';
 import { register } from '../../http/register';
 import { createUserFromForm } from '../../models/User';
 import { validateRegistration } from '../../validators'
+import { REGISTRATION_FAILED, REGISTRATION_SUCCESSFUL } from '../../store/constants';
 import { Form } from './styles'
-// import { useDispatch } from 'redux'
 
 const RegistrationForm = () => {
-
     const [state, setState] = useState({
         error: false,
         emailErrorMessage: null,
@@ -18,20 +18,23 @@ const RegistrationForm = () => {
         isAdmin: null
     })
 
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     const history = useHistory()
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
         const user = createUserFromForm(event.target)
-        console.log(user)
         const validation = validateRegistration(user)
         if (!validation.error) {
             try {
-                const res = register(user)
-                //TODO: set session and add user to redux
-                history.push('/')
+                const res = await register(user)
+                if (res.error) {
+                    dispatch({ type: REGISTRATION_FAILED })
+                } else {
+                    dispatch({ type: REGISTRATION_SUCCESSFUL, payload: { firebaseRes: res, user } })
+                    history.push('/')
+                }
             } catch (error) {
                 //TODO: Implement user error message
             }
