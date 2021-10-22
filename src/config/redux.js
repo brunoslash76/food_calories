@@ -5,16 +5,20 @@ import {
     createStore
 } from 'redux'
 import thunk from 'redux-thunk'
-import { } from '../store/reducers'
+import { authReducer, caloriesReducer } from '../store/reducers'
 
-export default function configureStore(initialState) {
-    const reducers = {}
+function configureStore(initialState) {
+    const reducers = {
+        authReducer,
+        caloriesReducer
+    }
     const enhancers = []
     const isDevelopment = true
+
     if (
-        isDevelopment &&
-        typeof window !== "undefined" &&
-        window.__REDUX_DEVTOOLS_EXTENSION__
+        isDevelopment
+        && typeof window !== "undefined"
+        && window.__REDUX_DEVTOOLS_EXTENSION__
     ) {
         enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__());
     }
@@ -34,3 +38,6 @@ export default function configureStore(initialState) {
         )
     )
 }
+
+const initialState = {}
+export const store = configureStore(initialState)
