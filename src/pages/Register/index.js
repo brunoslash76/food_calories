@@ -4,6 +4,7 @@ import { RegistrationForm } from '../../components'
 import Unauthenticated from '../../layouts/UnauthenticatedWrapper'
 
 const Register = () => {
+
     return (
         <Unauthenticated title="Registration">
             <RegistrationForm />
