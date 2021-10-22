@@ -1,13 +1,13 @@
 import { NavBar } from '../../components'
 import { Wrapper, ContentArea } from './styles'
 
-const PageWrapper = ({ child }) => {
+const PageWrapper = ({ children }) => {
     return (
         <>
             <NavBar title='Food Calories' />
             <Wrapper>
                 <ContentArea>
-                    {child}
+                    {children}
                 </ContentArea>
             </Wrapper>
         </>
