@@ -1,11 +1,11 @@
-import { Route } from 'react-router-dom'
+import { Redirect, Route } from 'react-router-dom'
 
-const AdminRoute = ({ path, isAdmin }) => {
+const AdminRoute = ({ path, isAdmin, component }) => {
 
-    if (!isAdmin) return <Route exact path='/' />
+    if (!isAdmin) return <Redirect exact path='/' />
 
     return (
-        <Route exact path={path} />
+        <Route exact path={path} component={component} />
     )
 
 }
