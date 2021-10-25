@@ -15,7 +15,6 @@ export const usersData = async () => {
 }
 
 export const getUserById = async (userId) => {
-    debugger
     try {
         const userRef = doc(db, 'users/', userId)
         const res = await getDoc(userRef)
