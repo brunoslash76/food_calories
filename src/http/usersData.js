@@ -1,3 +1,5 @@
+import { doc, getDoc } from '@firebase/firestore';
+import { db } from '../config/firebase';
 import { handleUsersFoodEntries } from '../utils/handleUsersFoodEntries';
 import { queryHelper } from '../utils/queryHelper';
 
@@ -12,7 +14,21 @@ export const usersData = async () => {
     }
 }
 
+export const getUserById = async (userId) => {
+    debugger
+    try {
+        const userRef = doc(db, 'users/', userId)
+        const res = await getDoc(userRef)
 
+        if (res.exists()) {
+            return res.data()
+        } else {
+            throw new Error('Not possible to fetch user')
+        }
+    } catch (error) {
+        throw new Error('Not possible to fetch user')
+    }
+}
 
 //TODO: PAGINATION EXAMPLE 
 // // Query the first page of docs
