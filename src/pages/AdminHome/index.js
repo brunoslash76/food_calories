@@ -1,6 +1,11 @@
+import AdminUsersWrapper from '../../components/AdminUsersWrapper'
+import PageWrapper from '../../layouts/PageWrapper'
+
 const AdminHome = () => {
     return (
-        <h1>Admin Home Page</h1>
+        <PageWrapper>
+            <AdminUsersWrapper />
+        </PageWrapper>
     )
 }
 
