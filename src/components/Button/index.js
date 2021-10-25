@@ -33,7 +33,7 @@ const Button = styled.button`
         border-radius: 4px;
         font-size: ${theme.fonts.sizes.medium};
         cursor: pointer;
-        ${modifiers[color]()}
+        ${!!color && modifiers[color]()}
         ${withRightSpacing && modifiers['withRightSpacing']()}
         ${withLeftSpacing && modifiers['withLeftSpacing']()}
     `}
