@@ -35,7 +35,7 @@ const FoodList = ({ foodArray = [] }) => {
     const mapFoodArray = () => {
         const datesAux = localFoodArray.map(food => {
             const date = new Date(food.date)
-            return date.toISOString().split('T')[0]
+            return date.toLocaleDateString()
         })
         const dates = new Set(datesAux)
         const array = []
@@ -46,7 +46,7 @@ const FoodList = ({ foodArray = [] }) => {
             }
             for (let i = 0; i < localFoodArray.length; i++) {
                 const foodDate = new Date(localFoodArray[i].date)
-                if (foodDate.toISOString().split('T')[0] === date) {
+                if (foodDate.toLocaleDateString() === date) {
                     obj.foods.push(localFoodArray[i])
                 }
             }

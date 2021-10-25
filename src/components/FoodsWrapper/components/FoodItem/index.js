@@ -17,12 +17,12 @@ const FoodItem = ({ foodArray }) => {
       )
     })
   }
-
+  const date = new Date(foodArray.date)
   return (
     <>
       <Header>
         <CaloriesCalculator foods={foodArray} />
-        <DateText>{foodArray.date}</DateText>
+        <DateText>{date.toLocaleDateString()}</DateText>
       </Header>
       <ul>
         {mapFoodArry()}
