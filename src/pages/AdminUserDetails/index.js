@@ -1,6 +1,11 @@
+import AdminUserDetailsWrapper from '../../components/AdminUserDetailsWrapper'
+import PageWrapper from '../../layouts/PageWrapper'
+
 const AdminUserDetails = () => {
     return (
-        <h1>Admin User Details Page</h1>
+        <PageWrapper>
+            <AdminUserDetailsWrapper />
+        </PageWrapper>
     )
 }
 
