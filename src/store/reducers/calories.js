@@ -3,10 +3,11 @@ const caloriesInitialState = {
 }
 
 export default function caloriesReducer(state = caloriesInitialState, action) {
+    console.log(action.payload)
     switch (action.type) {
         case 'SET_NEW_DAILY_CALORIES': {
             return {
-                calories: action.payload
+                caloriesThreshold: action.payload
             }
         }
         default:
